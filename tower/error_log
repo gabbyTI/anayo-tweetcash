@@ -1,0 +1,2 @@
+[01-Jul-2016 02:28:12 Asia/Jakarta] PHP Warning:  move_uploaded_file(/home/script/public_html/comet/superoffice/gallery/silipi.png): failed to open stream: No such file or directory in /home/script/public_html/comet/superoffice/admin.php on line 7485
+[01-Jul-2016 02:28:12 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpr1ihU6' to '/home/script/public_html/comet/superoffice/gallery/silipi.png' in /home/script/public_html/comet/superoffice/admin.php on line 7485

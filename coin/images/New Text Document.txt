@@ -1,0 +1,273 @@
+<?
+session_start();
+require('../config.php');
+require('../data.php');
+require('../fungsi.php');
+functionUserLock();
+$userStatus=$r["suspend"];
+functionUserBlocked($userStatus);
+include "head.php";
+$stats="2";
+$statt="1";
+$Stato="0";
+?>
+
+  <div class="row">
+
+
+
+<div class="col-lg-12">
+                                        <div class="panel panel-green">
+                                            <div class="panel-heading">Approve Transaction</div>
+                                            <div class="panel-body">
+
+
+
+<?
+if (isset($_GET["id"]))
+{
+$id=abs((int)$_GET["id"]);
+$option=$_GET["option"];
+if ($option=="verifikasi")
+{
+$user=$_COOKIE["usNick"];
+$q="select * from tb_beli WHERE id='$id'";
+$hsl=mysql_query($q) or die(mysql_error());
+$q=mysql_fetch_array($hsl);
+$reff1=$q["referer"];
+$ec=$q["ec"];
+$stuck=$q["status"];
+$stucke=$q["iddb"];
+$robin=$q["saldo"];
+$jakasembunglagi=$q["token"];
+$hood=$q["username"];
+$superman=$q["email"];
+$saras=$q["bank"];
+$zorro=$q["norek"];
+$batman=$q["nama"];
+$sponge=$q["paket"];
+$sibuta=$q["jpro"];
+$sintogendeng=$q["idph"];
+$jetli=$q["phone"];
+$tglphv=$q["date"];
+$bob=$sponge*$komisisp;
+
+
+$laip = $_SERVER['REMOTE_ADDR'];
+$eltiempo=time();
+$expoym=$eltiempo+$waktumb;
+$da=date("m");
+$joker=$sibuta/$pecahan;
+
+
+if ($user != "$reff1") {
+    echo "<font color=\"#cc0000\"><b>Sorry, you cannot verify this transaction</b></font><br><br>";
+   exit();
+}
+
+
+if ($stuck != "pending") {
+    echo "<font color=\"#cc0000\"><b>Error, you cannot verify this transaction</b></font><br><br>";
+   exit();
+}
+
+if ($reff1 == "") {
+   echo "<font color=\"#cc0000\"><b>No, you cannot verify this transaction</b></font><br><br>";
+   exit();
+}
+
+else
+{
+
+$qq="select * from tb_users WHERE username='$hood'";
+$hslq=mysql_query($qq) or die(mysql_error());
+$qq=mysql_fetch_array($hslq);
+$komsp=$qq["referer"];
+$komspa=$qq["leva"];
+$komspb=$qq["levb"];
+$komspc=$qq["levc"];
+$komspd=$qq["levd"];
+$komspe=$qq["leve"];
+$komspf=$qq["levf"];
+$komspg=$qq["levg"];
+$komsph=$qq["levh"];
+$komspi=$qq["levi"];
+$komspj=$qq["levj"];
+
+$statte="select * from tb_beli where WHERE token='$jakasembunglagi' ";
+$statty=mysql_query($statte) or die (mysql_error());
+$stattd=mysql_fetch_array($statty);
+$statte=$stattd['username'];
+$statw="select * from tb_users where WHERE username='$statte' ";
+$staty=mysql_query($statw) or die (mysql_error());
+$statd=mysql_fetch_array($staty);
+$state=$statd['statr'];
+if ($state=$stats){
+mysql_query("UPDATE tb_beli SET status='sukses', saldo=saldo-'$robin', verify='$eltiempo', exp='' WHERE id='$id'") or die(mysql_error());
+mysql_query("UPDATE tb_ph SET sisa=sisa-'$robin' WHERE id='$sintogendeng'") or die(mysql_error());
+mysql_query("UPDATE tb_users Set statr='$statt' WHERE username='$statte'") or die(mysql_error());
+mysql_query("UPDATE tb_jual SET status='sukses', saldo='0' WHERE token='$jakasembunglagi'") or die(mysql_error());
+$qq2="select * from tb_jual WHERE token='$jakasembunglagi'";
+$hslq=mysql_query($qq2) or die(mysql_error());
+$rowstatuser=mysql_query($qq2);
+$myrowstat=mysql_fetch_array($rowstatuser);
+$thisrowstat=$myrowstat['username'];
+mysql_query("UPDATE tb_users SET statr='$statt' WHERE username='$thisrowstat'") or die(mysql_error());
+$qq2=mysql_fetch_array($hslq);
+}
+else if ($state=$stato) {
+    mysql_query("UPDATE tb_beli SET status='sukses', saldo=saldo-'$robin', verify='$eltiempo', exp='' WHERE id='$id'") or die(mysql_error());
+mysql_query("UPDATE tb_ph SET sisa=sisa-'$robin' WHERE id='$sintogendeng'") or die(mysql_error());
+mysql_query("UPDATE tb_users Set statr='$statt' WHERE username='$statte'") or die(mysql_error());
+mysql_query("UPDATE tb_jual SET status='sukses', saldo='0' WHERE token='$jakasembunglagi'") or die(mysql_error());
+$qq2="select * from tb_jual WHERE token='$jakasembunglagi'";
+$hslq=mysql_query($qq2) or die(mysql_error());
+$rowstatuser=mysql_query($qq2);
+$myrowstat=mysql_fetch_array($rowstatuser);
+$thisrowstat=$myrowstat['username'];
+mysql_query("UPDATE tb_users SET statr='$statt' WHERE username='$thisrowstat'") or die(mysql_error());
+$qq2=mysql_fetch_array($hslq);
+}
+else if ($state=$statt) {
+    mysql_query("UPDATE tb_beli SET status='sukses', saldo=saldo-'$robin', verify='$eltiempo', exp='' WHERE id='$id'") or die(mysql_error());
+mysql_query("UPDATE tb_ph SET sisa=sisa-'$robin' WHERE id='$sintogendeng'") or die(mysql_error());
+mysql_query("UPDATE tb_users Set statr='$statS' WHERE username='$statte'") or die(mysql_error());
+mysql_query("UPDATE tb_jual SET status='sukses', saldo='0' WHERE token='$jakasembunglagi'") or die(mysql_error());
+$qq2="select * from tb_jual WHERE token='$jakasembunglagi'";
+$hslq=mysql_query($qq2) or die(mysql_error());
+$rowstatuser=mysql_query($qq2);
+$myrowstat=mysql_fetch_array($rowstatuser);
+$thisrowstat=$myrowstat['username'];
+mysql_query("UPDATE tb_users SET statr='$statt' WHERE username='$thisrowstat'") or die(mysql_error());
+$qq2=mysql_fetch_array($hslq);
+}
+
+mysql_query("UPDATE tb_gh SET sisa=sisa-'$robin' WHERE id='$stucke'") or die(mysql_error());
+
+
+$qqm="select * from tb_users WHERE username='$hood'";
+$hslqm=mysql_query($qqm) or die(mysql_error());
+$qqm=mysql_fetch_array($hslqm);
+$forrm=$qqm["phone"];
+
+$s = '$superman';
+$z = '$batman';
+$_SESSION['next_reseptsend'] = 1;
+$message = "Dear {$batman},
+
+Congratulation, your {$skph} has been verified
+
+Thanks,
+Admin {$config['site_name']}";
+mail($superman,"PH Verification - ".$config["site_name"],$message,"From: mail@".$_SERVER['HTTP_HOST']);
+
+
+$tabla = mysql_query("SELECT * FROM tb_users where username='$reff1'");
+while ($registro = mysql_fetch_array($tabla)) {
+$s1 = $registro["email"];
+$z1 = $registro["nama"];
+
+$_SESSION['next_reseptsend'] = 1;
+$message = "Dear {$z1},
+
+Your PH Verifications has been success  for {$skph} member {$hood}
+
+Thanks,
+Admin {$config['site_name']}";
+mail($s1,"PH Verification - ".$config["site_name"],$message,"From: admin@".$_SERVER['HTTP_HOST']);
+
+}
+
+echo "<font color=\"#cc0000\"><b>Verification Success!! Thanks</b></font><br><br>";
+}
+}
+
+}
+?>
+<div class="table-responsive">
+<table class="table table-hover table-bordered">
+   <thead><tr>
+<th>Detail Transactions </th>
+<th>Detail User </th>
+<th>Detail Payment</th>   
+<th>Message</th>
+<th>Pic</th>                     
+<th>Option</th>
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+
+
+						
+
+<?
+$TAMANO_PAGINA = 20000;
+$pagina = $_GET["pagina"];
+if (!$pagina) {
+$inicio = 0;
+$pagina=1;
+}
+else {
+$inicio = ($pagina - 1) * $TAMANO_PAGINA;
+}
+$lole=$_COOKIE["usNick"];
+$tabla = mysql_query("SELECT * FROM tb_beli where referer='$lole' and status='pending' and id='$id'"); 
+while ($registro = mysql_fetch_array($tabla)) { 
+$bukti=$registro["avatar"];
+$jojon=$registro["paket"];
+$jojon2=$registro["unik"];
+$jojon3=$jojon+$jojon2;
+$apel=$registro["exp"];
+$jambu=time();
+$jeruk=$apel-$jambu;
+$sirsak=floor($jeruk/3600);
+$sirsake=floor($jeruk/60);
+if($sirsak < 0){$rambutan="Time Out!";} 
+else{$rambutan="$sirsake minutes <br> Time Out";}
+if($bukti=='0'){$wowo="images/ssoff.jpg";}
+else {$wowo=$bukti;}
+
+
+echo "
+<tr class=\"odd gradeX\">
+<td>
+Date : ". date("d M H:i:s",$registro["date"]) ." <br>
+Expired : ". date("d M H:i:s",$registro["exp"]) ." <br>
+Amount : ". $matauang ." ". number_format($registro["paket"]+$registro["unik"]) ." </td>
+
+<td>
+Username : ". $registro["username"] ." <br>
+Phone : ". $registro["phone"] ." <br>
+Email : ". $registro["email"] ." </td>
+
+<td> 
+
+BTC Wallet : ". $registro["bitcoin"] ." <BR>
+
+                                         
+</td>
+<td> 
+Message : ". $registro["pesan"] ." <br>
+</td>
+<td>
+<a href=\"". $registro["pic"] ."\" target=\"_blank\"><img src=\"". $registro["pic"] ."\" width=\"60\" height=\"60\"></a>
+</td>
+<td>
+";
+?>
+
+<form method="post" action="verify.php?id=<?= $registro["id"] ?>&option=verifikasi">
+<input type="submit" onclick="if (confirm('Are You Sure To Verify ?')) submit();"  class="btn btn-primary btn-xm" value="VERIFY">
+</form>
+
+</font></td>
+
+</tr>
+<? } ?>
+</table>
+</div></div></div>
+<?
+include "foot.php";
+?>
