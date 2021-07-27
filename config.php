@@ -1,8 +1,8 @@
 <?
 $dhost = "localhost"; // Isi dengan localhost
-$dusername = "root"; // database user
-$dpassword = ""; // database pass
-$ddatabase = "mmcm"; // database name
+$dusername = "tweetcas_admin_access"; // database user
+$dpassword = "2t],^CZgjc]&"; // database pass
+$ddatabase = "tweetcas_db";
 date_default_timezone_set("Africa/Lagos");
 error_reporting(0);
 
@@ -54,7 +54,3 @@ $statrei="select * from settph where id='1'";
 $statresi=mysql_query($statrei) or die(mysql_error());
 $statrei=mysql_fetch_array($statresi);
 $statredi=$statrei['statr'];
-
-
-
-?>
